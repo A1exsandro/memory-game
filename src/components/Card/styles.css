@@ -1,7 +1,7 @@
 .card_content {
     position: relative;
-    width: 100%;
-    aspect-ratio: 1/1;
+    width: 100px;
+    height: 100px;
     transform-style: preserve-3d;
     transition: transform 600ms ease-in-out;
 }

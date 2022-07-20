@@ -19,7 +19,7 @@ export function Card({ flipped = false, back, handleClick, id }: CardProps) {
 
   return(
     <div className="card" onClick={() => handleClickfn(id)}>
-      <div className={cardContentClassName.join('')}>
+      <div className={cardContentClassName.join(' ')}>
         <div className="card_face card_face--front">Front</div>
         <div className="card_face card_face--back">{back}</div>
       </div>
