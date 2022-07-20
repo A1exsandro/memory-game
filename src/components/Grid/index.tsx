@@ -18,6 +18,15 @@ export function Grid({cards}: GridProps) {
   const second = useRef<CardProps | null>(null);
   const unflip = useRef(false);
 
+  const handleReset = () => {
+    setStatesCards(duplicateRegenerateSortArray(cards));
+    first.current = null;
+    second.current = null;
+    unflip.current = false;
+    setMatches(0);
+    setMoves(0);
+  }
+
   const handleClick = (id: string) => {
     const newStateCards = stateCards.map((card) => {
       if(card.id !== id) return card;
@@ -68,7 +77,7 @@ export function Grid({cards}: GridProps) {
         <h1>
           Memory Game 
         </h1>
-        <p>Moves: {moves} | Matches: {matches} | <button>Reset</button> </p>
+        <p>Moves: {moves} | Matches: {matches} | <button onClick={handleReset}>Reset</button> </p>
       </div>
       <div className="grid">
         {
